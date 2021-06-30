@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+body{
+    font-size: 16px;
+    background-color: #C3F8FF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.hide{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.custom-box{
+    max-width: 500px;
+    background-color: #5ADAA6;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.home-box {
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;    
+    width: 400px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    margin-left : -200px; /* half of the width  */
+    margin-top  : -100px; 
+}
+
+.home-box h3{
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+
+.home-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.home-box p span{
+    font-weight: 500;
+}
+
+.btn{
+    padding: 15px 45px;
+    background-color: #C3F8FF;
+    color: #000000;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.quiz-box .question-number,
+.quiz-box .question-text,
+.quiz-box .option-container,
+.quiz-box .next-question-btn,
+.quiz-box .answers-indicator{
+    width: 100%;
+    float: left;
+}
+.quiz-box .question-number{
+    font-size: 18px;
+    color: #C3F8FF;
+    font-weight: 600;
+    /* border-bottom: 1px solid #cccccc; */
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+.quiz-box .question-text{
+    font-size: 22px;
+    color: #000000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 20px 0;   
+    margin: 0;
+}
+
+
+.quiz-box .option-container .option{
+    background-color: #C3F8FF;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+.quiz-box .option-container .option.already-answered{
+    pointer-events: none;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}  
+.quiz-box .option-container .option.answer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFE082;
+    z-index: -1;
+    animation: slideInLeft .5s ease forwards;
+} 
+@keyframes slideInLeft{
+    0%{
+        transform: translate(-100%);
+    }
+    100%{
+        transform: translate(0%);
+    }
+}
+
+.quiz-box .btn{
+    margin: 15px 0;
+}
+.quiz-box .answers-indicator{
+    border-top: 1px solid #C3F8FF;
+}
+.quiz-box .answers-indicator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #C3F8FF;
+    border-radius: 50px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+
+.result-box{
+    text-align: center;
+}
+
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #C3F8FF;
+}
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+.result-box table td{
+    border: 1px solid #cccccc;
+    padding: 8px 15px;
+    font-weight: 500;
+    color: #000000;
+    width: 50%;
+    font-size: 18px;
+}
+
+.result-box .btn{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.result-box .media-indicator{
+    border-top: 1px solid #C3F8FF;
+    margin-top: 10px;
+}
+.result-box .media-indicator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #C3F8FF;
+    border-radius: 50px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+.result-box .media-indicator .fa-telegram,
+.result-box .media-indicator .fa-instagram,
+.result-box .media-indicator .fa-whatsapp,
+.result-box .media-indicator .fa-pinterest,
+.result-box .media-indicator .fa-quora{
+    justify-content: center;
+    font-size: 40px;
+    overflow: hidden;
+    color: rgb(27, 26, 26);
+}
